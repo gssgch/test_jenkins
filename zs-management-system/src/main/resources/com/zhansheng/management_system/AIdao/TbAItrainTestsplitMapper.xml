@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.AIdao.TbAItrainTestsplitMapper">
+  <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.aiManager.TbAItrainTestsplit">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="topic" jdbcType="VARCHAR" property="topic" />
+    <result column="featureSelKey" jdbcType="VARCHAR" property="featureselkey" />
+    <result column="trainNum" jdbcType="VARCHAR" property="trainnum" />
+    <result column="testNum" jdbcType="INTEGER" property="testnum" />
+    <result column="shares" jdbcType="INTEGER" property="shares" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="descc" jdbcType="VARCHAR" property="descc" />
+  </resultMap>
+
+  <select id="findList" resultMap="BaseResultMap">
+    SELECT
+    *
+    FROM
+    ai_trainTestsplit t
+    WHERE
+    1 = 1
+    <if test="featureselkey != null and featureselkey != '' ">
+     and t.featureSelKey = #{featureselkey}
+    </if>
+    ORDER BY
+    t.createTime DESC
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ai_trainTestsplit
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zhansheng.framework.domain.aiManager.TbAItrainTestsplit">
+    <selectKey keyProperty="id" keyColumn="id" resultType="INTEGER" order="AFTER">
+      select last_insert_id();
+    </selectKey>
+    insert into ai_trainTestsplit (topic, featureSelKey,
+      trainNum, testNum, shares,
+      createTime, descc)
+    values ( #{topic,jdbcType=VARCHAR}, #{featureselkey,jdbcType=VARCHAR},
+      #{trainnum,jdbcType=VARCHAR}, #{testnum,jdbcType=INTEGER}, #{shares,jdbcType=INTEGER},
+      #{createtime,jdbcType=TIMESTAMP}, #{descc,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhansheng.framework.domain.aiManager.TbAItrainTestsplit">
+    update ai_trainTestsplit
+    <set>
+      <if test="topic != null">
+        topic = #{topic,jdbcType=VARCHAR},
+      </if>
+      <if test="featureselkey != null">
+        featureSelKey = #{featureselkey,jdbcType=VARCHAR},
+      </if>
+      <if test="trainnum != null">
+        trainNum = #{trainnum,jdbcType=VARCHAR},
+      </if>
+      <if test="testnum != null">
+        testNum = #{testnum,jdbcType=INTEGER},
+      </if>
+      <if test="shares != null">
+        shares = #{shares,jdbcType=INTEGER},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="descc != null">
+        descc = #{descc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhansheng.framework.domain.aiManager.TbAItrainTestsplit">
+    update ai_trainTestsplit
+    set topic = #{topic,jdbcType=VARCHAR},
+      featureSelKey = #{featureselkey,jdbcType=VARCHAR},
+      trainNum = #{trainnum,jdbcType=VARCHAR},
+      testNum = #{testnum,jdbcType=INTEGER},
+      shares = #{shares,jdbcType=INTEGER},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      descc = #{descc,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

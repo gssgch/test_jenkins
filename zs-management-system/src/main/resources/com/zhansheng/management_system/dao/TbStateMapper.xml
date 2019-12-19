@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.dao.TbStateMapper">
+
+
+    <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.UserManager.TbStateMysql">
+        <id column="F_Id" jdbcType="INTEGER" property="fId"/>
+        <result column="F_DraughtNumber" jdbcType="INTEGER" property="fDraughtNumber"/>
+        <result column="F_CreateTime" jdbcType="VARCHAR" property="fCreateTime"/>
+        <result column="F_State1Value" jdbcType="INTEGER" property="fState1Value"/>
+        <result column="F_State2Value" jdbcType="INTEGER" property="fState2Value"/>
+        <result column="F_State3Value" jdbcType="INTEGER" property="fState3Value"/>
+    </resultMap>
+
+
+    <!--查询工控系统-->
+    <select id="findState1List" resultMap="BaseResultMap">
+        SELECT * FROM tb_state t WHERE t.F_DraughtNumber = #{draughtNumber} ORDER BY F_CreateTime DESC LIMIT 1
+    </select>
+
+
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from tb_state
+    where F_Id = #{fId,jdbcType=INTEGER}
+  </delete>
+
+
+    <insert id="insert" parameterType="com.zhansheng.framework.domain.UserManager.TbStateMysql">
+    insert into tb_state (F_Id, F_DraughtNumber, F_CreateTime, 
+      F_State1Key, F_State1Value, F_State2Key, 
+      F_State2Value, F_State3Key, F_State3Value
+      )
+    values (
+    #{fId,jdbcType=INTEGER},
+     #{fDraughtnumber,jdbcType=INTEGER},
+     #{fCreatetime,jdbcType=VARCHAR},
+       #{fState1value,jdbcType=INTEGER},
+      #{fState2value,jdbcType=INTEGER},
+       #{fState3value,jdbcType=INTEGER}
+      )
+  </insert>
+
+
+    <update id="updateByPrimaryKey"
+            parameterType="com.zhansheng.framework.domain.UserManager.TbStateMysql">
+    update tb_state
+    set F_DraughtNumber = #{fDraughtnumber,jdbcType=INTEGER},
+      F_CreateTime = #{fCreatetime,jdbcType=VARCHAR},
+      F_State1Value = #{fState1value,jdbcType=INTEGER},
+      F_State2Value = #{fState2value,jdbcType=INTEGER},
+      F_State3Value = #{fState3value,jdbcType=INTEGER}
+    where F_Id = #{fId,jdbcType=INTEGER}
+  </update>
+
+
+</mapper>

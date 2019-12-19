@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.auth.dao.ZsUserMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.UserManager.TbUser">
+        <result column="F_User_id" jdbcType="INTEGER" property="fUserId"/>
+        <result column="F_Username" jdbcType="VARCHAR" property="fUsername"/>
+        <result column="F_Password" jdbcType="VARCHAR" property="fPassword"/>
+        <result column="F_Telepone" jdbcType="VARCHAR" property="fTelepone"/>
+        <result column="F_Email" jdbcType="VARCHAR" property="fEmail"/>
+        <result column="F_Sex" jdbcType="VARCHAR" property="fSex"/>
+        <result column="F_Type" jdbcType="VARCHAR" property="fType"/>
+        <result column="F_Company" jdbcType="VARCHAR" property="fCompany"/>
+        <result column="F_Department" jdbcType="VARCHAR" property="fDepartment"/>
+        <result column="F_Asministartive" jdbcType="VARCHAR" property="fAsministartive"/>
+        <result column="F_Owner" jdbcType="VARCHAR" property="fOwner"/>
+        <result column="F_Province" jdbcType="VARCHAR" property="fProvince"/>
+        <result column="F_City" jdbcType="VARCHAR" property="fCity"/>
+        <result column="F_Createuser" jdbcType="VARCHAR" property="fCreateuser"/>
+        <result column="F_Createtime" jdbcType="VARCHAR" property="fCreatetime"/>
+        <result column="F_Updatetime" jdbcType="VARCHAR" property="fUpdatetime"/>
+        <result column="F_Userstories" jdbcType="VARCHAR" property="fUserstories"/>
+    </resultMap>
+
+
+    <select id="findByUsername" resultMap="BaseResultMap">
+        select * from tb_user where F_Username = #{username}
+    </select>
+
+
+
+
+</mapper>

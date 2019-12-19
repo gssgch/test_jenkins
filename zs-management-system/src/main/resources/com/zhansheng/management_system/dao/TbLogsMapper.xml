@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.dao.TbLogsMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.UserManager.TbLog">
+        <result column="F_Log_id" jdbcType="INTEGER" property="fLogId"/>
+        <result column="F_User_name" jdbcType="VARCHAR" property="fUserName"/>
+        <result column="F_Module" jdbcType="VARCHAR" property="fModule"/>
+        <result column="F_Flag" jdbcType="VARCHAR" property="fFlag"/>
+        <result column="F_Remark" jdbcType="VARCHAR" property="fRemark"/>
+        <result column="F_CreateTime" jdbcType="VARCHAR" property="fCreateTime"/>
+    </resultMap>
+
+    <select id="findPageList" resultMap="BaseResultMap">
+        SELECT
+            *
+        FROM
+            tb_log l
+        WHERE
+            1 = 1
+            <if test="userName != null and userName !=''">
+                AND l.F_User_name LIKE "%"#{userName}"%"
+            </if>
+            <if test="module != null and module !=''">
+                and l.F_Module = #{module}
+            </if>
+            <if test="flag != null and flag !=''">
+                AND l.F_Flag = #{flag}
+            </if>
+            <if test="startTime != null and startTime !=''">
+                AND l.F_CreateTime &gt;=  #{startTime}
+            </if>
+            <if test="endTime != null and endTime !=''">
+                AND l.F_CreateTime &lt;= #{endTime}
+            </if>
+        ORDER BY
+            l.F_CreateTime DESC
+    </select>
+
+    <insert id="save" parameterType="com.zhansheng.framework.domain.UserManager.TbLog">
+        <selectKey keyProperty="fLogId" keyColumn="F_Log_id" resultType="int" order="AFTER">
+            select last_insert_id();
+        </selectKey>
+        insert into tb_log
+        (F_User_name,
+        F_Module,
+        F_Flag,
+        F_Remark,
+        F_CreateTime)
+        values
+        (#{fUserName},#{fModule},#{fFlag},#{fRemark},now());
+    </insert>
+
+</mapper>

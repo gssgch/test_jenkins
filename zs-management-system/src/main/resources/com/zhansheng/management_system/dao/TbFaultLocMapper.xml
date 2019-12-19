@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.dao.TbFaultLocMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbFaultLoc">
+        <id column="fault_loc_num" jdbcType="INTEGER" property="faultLocNum"/>
+        <result column="fault_loc" jdbcType="VARCHAR" property="faultLoc"/>
+        <result column="picture" jdbcType="VARCHAR" property="picture"/>
+        <result column="descb" jdbcType="VARCHAR" property="descb"/>
+    </resultMap>
+
+
+    <!--查询位置和id-->
+    <select id="findLoc" resultMap="BaseResultMap">
+        select fl.fault_loc_num,fl.fault_loc from fault_loc fl
+     </select>
+
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from fault_loc
+    where fault_loc_num = #{faultLocNum,jdbcType=INTEGER}
+  </delete>
+
+
+    <insert id="insert" parameterType="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbFaultLoc">
+
+        <selectKey keyProperty="faultLocNum" keyColumn="fault_loc_num" resultType="int" order="AFTER">
+            select last_insert_id();
+        </selectKey>
+
+        insert into fault_loc ( fault_loc, picture,
+        descb)
+        values ( #{faultLoc,jdbcType=VARCHAR}, #{picture,jdbcType=VARCHAR}, #{descb,jdbcType=VARCHAR})
+    </insert>
+
+
+    <update id="updateByPrimaryKey"
+            parameterType="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbFaultLoc">
+    update fault_loc
+    set fault_loc = #{faultLoc,jdbcType=VARCHAR},
+      picture = #{picture,jdbcType=VARCHAR},
+      descb = #{descb,jdbcType=VARCHAR}
+    where fault_loc_num = #{faultLocNum,jdbcType=INTEGER}
+  </update>
+
+
+    <update id="updateNotFile"
+            parameterType="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbFaultLoc">
+        update fault_loc
+        set fault_loc = #{faultLoc,jdbcType=VARCHAR},
+        descb = #{descb,jdbcType=VARCHAR}
+        where fault_loc_num = #{faultLocNum,jdbcType=INTEGER}
+    </update>
+
+
+    <select id="findList" resultMap="BaseResultMap">
+    select * from fault_loc
+  </select>
+
+
+</mapper>

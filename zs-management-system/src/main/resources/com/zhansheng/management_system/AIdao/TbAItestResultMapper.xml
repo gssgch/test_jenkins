@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.AIdao.TbAItestResultMapper">
+  <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.aiManager.TbAItestResult">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="modelKey" jdbcType="VARCHAR" property="modelkey" />
+    <result column="accrate" jdbcType="DOUBLE" property="accrate" />
+    <result column="recallrate" jdbcType="DOUBLE" property="recallrate" />
+    <result column="falseAlarmRate" jdbcType="DOUBLE" property="falsealarmrate" />
+    <result column="testNum" jdbcType="INTEGER" property="testnum" />
+    <result column="testStep" jdbcType="INTEGER" property="teststep" />
+  </resultMap>
+
+  <select id="findList" resultMap="BaseResultMap">
+    SELECT
+    *
+    FROM
+    ai_testResult t
+    WHERE
+    1 = 1
+    <if test="modelkey != null and modelkey != '' ">
+     and  t.modelKey = #{modelkey}
+    </if>
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ai_testResult
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zhansheng.framework.domain.aiManager.TbAItestResult">
+    <selectKey keyProperty="id" keyColumn="id" resultType="INTEGER" order="AFTER">
+      select last_insert_id();
+    </selectKey>
+    insert into ai_testResult ( modelKey, accrate,
+      recallrate, falseAlarmRate, testNum, 
+      testStep)
+    values ( #{modelkey,jdbcType=VARCHAR}, #{accrate,jdbcType=DOUBLE},
+      #{recallrate,jdbcType=DOUBLE}, #{falsealarmrate,jdbcType=DOUBLE}, #{testnum,jdbcType=INTEGER}, 
+      #{teststep,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhansheng.framework.domain.aiManager.TbAItestResult">
+    update ai_testResult
+    <set>
+      <if test="modelkey != null">
+        modelKey = #{modelkey,jdbcType=VARCHAR},
+      </if>
+      <if test="accrate != null">
+        accrate = #{accrate,jdbcType=DOUBLE},
+      </if>
+      <if test="recallrate != null">
+        recallrate = #{recallrate,jdbcType=DOUBLE},
+      </if>
+      <if test="falsealarmrate != null">
+        falseAlarmRate = #{falsealarmrate,jdbcType=DOUBLE},
+      </if>
+      <if test="testnum != null">
+        testNum = #{testnum,jdbcType=INTEGER},
+      </if>
+      <if test="teststep != null">
+        testStep = #{teststep,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhansheng.framework.domain.aiManager.TbAItestResult">
+    update ai_testResult
+    set modelKey = #{modelkey,jdbcType=VARCHAR},
+      accrate = #{accrate,jdbcType=DOUBLE},
+      recallrate = #{recallrate,jdbcType=DOUBLE},
+      falseAlarmRate = #{falsealarmrate,jdbcType=DOUBLE},
+      testNum = #{testnum,jdbcType=INTEGER},
+      testStep = #{teststep,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

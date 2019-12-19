@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.AIdao.TbAIrawselectfanStatMapper">
+  <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.aiManager.TbAIrawselectfanStat">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="selectKey" jdbcType="VARCHAR" property="selectkey" />
+    <result column="fanNum" jdbcType="VARCHAR" property="fannum" />
+    <result column="counts" jdbcType="INTEGER" property="counts" />
+  </resultMap>
+
+  <select id="findListFan" resultMap="BaseResultMap">
+    SELECT
+    *
+    FROM
+    ai_rawselectfanStat r
+    WHERE
+    1 = 1
+    <if test="selectkey != null and selectkey != '' ">
+     and  r.selectKey = #{selectkey}
+    </if>
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ai_rawselectfanStat
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zhansheng.framework.domain.aiManager.TbAIrawselectfanStat">
+    <selectKey keyProperty="id" keyColumn="id" resultType="INTEGER" order="AFTER">
+      select last_insert_id();
+    </selectKey>
+    insert into ai_rawselectfanStat (selectKey, fanNum,
+      counts)
+    values (#{selectkey,jdbcType=VARCHAR}, #{fannum,jdbcType=VARCHAR},
+      #{counts,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhansheng.framework.domain.aiManager.TbAIrawselectfanStat">
+    update ai_rawselectfanStat
+    <set>
+      <if test="selectkey != null">
+        selectKey = #{selectkey,jdbcType=VARCHAR},
+      </if>
+      <if test="fannum != null">
+        fanNum = #{fannum,jdbcType=VARCHAR},
+      </if>
+      <if test="counts != null">
+        counts = #{counts,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhansheng.framework.domain.aiManager.TbAIrawselectfanStat">
+    update ai_rawselectfanStat
+    set selectKey = #{selectkey,jdbcType=VARCHAR},
+      fanNum = #{fannum,jdbcType=VARCHAR},
+      counts = #{counts,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

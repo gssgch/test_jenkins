@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="83b8622a-de0a-4ec9-8140-732e1e00ff9d" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/zs-govern-center/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/zs-govern-center/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-govern-center/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-govern-center/target/classes/com/zhansheng/govern/center/GovernCenterApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-govern-center/target/classes/logback-spring.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-govern-center/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-govern-center/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-govern-center/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-govern-center/target/zs-govern-center-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-govern-center/target/zs-govern-center-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-govern-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/zs-govern-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-govern-gateway/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-govern-gateway/target/classes/com/zhansheng/goven/zuul/GovernZuulApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-govern-gateway/target/classes/com/zhansheng/goven/zuul/config/CorsFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-govern-gateway/target/classes/com/zhansheng/goven/zuul/filter/LoginFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-govern-gateway/target/classes/com/zhansheng/goven/zuul/filter/LoginFilterTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-govern-gateway/target/classes/com/zhansheng/goven/zuul/service/AuthService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-govern-gateway/target/classes/logback-spring.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-govern-gateway/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-govern-gateway/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-govern-gateway/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-govern-gateway/target/zs-govern-gateway-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-govern-gateway/target/zs-govern-gateway-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/zs-management-system/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIcontroller/AialgorithmController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIcontroller/AifeatureEngFanStatController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIcontroller/AifeatureEnginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIcontroller/AifeatureSelectController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIcontroller/AikeysnumController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIcontroller/AimodelController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIcontroller/AimodelpreparamController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIcontroller/AimodelpreresultController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIcontroller/AirawfieldselectController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIcontroller/AirawselectfanStatController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIcontroller/AitestResultController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIcontroller/AitrainResultController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIcontroller/AitrainTestsplitController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIcontroller/DictTopicfieldController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/DictTopicfieldMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/DictTopicfieldMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAIalgorithmMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAIalgorithmMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAIfeatureEngFanStatMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAIfeatureEngFanStatMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAIfeatureEnginMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAIfeatureEnginMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAIfeatureSelectMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAIfeatureSelectMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAIkeysnumMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAIkeysnumMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAImodelColumnsMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAImodelColumnsMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAImodelMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAImodelMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAImodelpreparamMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAImodelpreparamMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAImodelpreresultMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAImodelpreresultMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAIrawfieldselectMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAIrawfieldselectMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAIrawselectfanStatMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAIrawselectfanStatMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAItestResultMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAItestResultMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAItrainResultMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAItrainResultMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAItrainTestsplitMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIdao/TbAItrainTestsplitMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIservice/AialgorithmServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIservice/AifeatureEngFanStatServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIservice/AifeatureEnginServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIservice/AifeatureSelectServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIservice/AikeysnumServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIservice/AimodelServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIservice/AimodelpreparamServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIservice/AimodelpreresultServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIservice/AirawfieldselectServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIservice/AirawselectfanStatServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIservice/AitestResultServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIservice/AitrainResultServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIservice/AitrainTestsplitServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/AIservice/DictTopicfieldServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/ManageUserApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/advice/LogAdvice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/annotation/LogAnnotation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/config/CustomExceptionCatch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/config/FilePathConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/config/HdfsConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/config/ResourceServerConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/controller/AlarmreceiverController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/controller/AlarmrulesController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/controller/BaseController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/controller/BladeMonitorController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/controller/DraughtfanController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/controller/ExcelController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/controller/FanFaultAlarmController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/controller/FanFaultBladeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/controller/FanFaultController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/controller/FanFaultRepairController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/controller/FanFaultdrivechainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/controller/FanfaultrepoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/controller/FanfaultreportControler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/controller/FanpowerreportController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/controller/FaultlocController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/controller/FaulttypeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/controller/IndustrialIndexController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/controller/LogsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/controller/LoopController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/controller/MailController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/controller/PermissionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/controller/RoleController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/controller/VibrationMonitorController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/controller/WindmillController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/BladeMonitorMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/BladeMonitorMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbAlarmreceiverMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbAlarmreceiverMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbAlarmrulesMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbAlarmrulesMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbDictMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbDictMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbDraughtfanMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbDraughtfanMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbFanFaultMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbFanFaultMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbFanFaultRepairMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbFanFaultRepairMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbFanfaultalarmMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbFanfaultalarmMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbFanfaultrepoMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbFanfaultrepoMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbFanfaultreportMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbFanfaultreportMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbFanpowerreportMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbFanpowerreportMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbFaultLocMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbFaultLocMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbFaultMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbFaultTypeMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbFaultTypeMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbLogsMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbLogsMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbLoopDraughtfanMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbLoopDraughtfanMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbLoopMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbLoopMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbParticularsMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbParticularsMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbPermissionMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbPermissionMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbRoleMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbRoleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbRolePermissionMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbRolePermissionMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbStateMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbStateMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbUserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbUserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbUserRoleMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbUserRoleMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbVoiceVideoMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbVoiceVideoMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbWindmillLoopMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbWindmillLoopMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbWindmillMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/dao/TbWindmillMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/service/BaseServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/service/BladeMonitorServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/service/IndustrialIndexServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/service/MailServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/service/TbAlarmreceiverServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/service/TbAlarmrulesServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/service/TbDraughtfanServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/service/TbFanFaultAlarmServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/service/TbFanFaultRepairServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/service/TbFanFaultServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/service/TbFanfaultrepoServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/service/TbFanfaultreportServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/service/TbFanpowerreportServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/service/TbFaultlocServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/service/TbFaulttypeServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/service/TbLogsServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/service/TbLoopServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/service/TbPermissionServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/service/TbRoleServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/service/TbUserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/service/TbWindmillServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/utils/AIConstant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/utils/AIKeyUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/utils/FileUtils.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/utils/MP3ToWavUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/utils/RedisConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/utils/RedisService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/com/zhansheng/management_system/utils/WavFileReadUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/logback-spring.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/classes/publickey.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/test-classes/com/zhansheng/management_system/SpringbootTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/zs-management-system-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-management-system/target/zs-management-system-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-certificateauthority/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/zs-service-certificateauthority/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-certificateauthority/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-certificateauthority/target/classes/com/zhansheng/auth/UcenterAuthApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-certificateauthority/target/classes/com/zhansheng/auth/client/UserClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-certificateauthority/target/classes/com/zhansheng/auth/config/AuthorizationServerConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-certificateauthority/target/classes/com/zhansheng/auth/config/CustomUserAuthenticationConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-certificateauthority/target/classes/com/zhansheng/auth/config/WebMvcConfig$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-certificateauthority/target/classes/com/zhansheng/auth/config/WebMvcConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-certificateauthority/target/classes/com/zhansheng/auth/config/WebSecurityConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-certificateauthority/target/classes/com/zhansheng/auth/controller/AuthController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-certificateauthority/target/classes/com/zhansheng/auth/dao/TbPermissionMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-certificateauthority/target/classes/com/zhansheng/auth/dao/TbPermissionMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-certificateauthority/target/classes/com/zhansheng/auth/dao/ZsUserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-certificateauthority/target/classes/com/zhansheng/auth/dao/ZsUserMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-certificateauthority/target/classes/com/zhansheng/auth/service/AuthService$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-certificateauthority/target/classes/com/zhansheng/auth/service/AuthService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-certificateauthority/target/classes/com/zhansheng/auth/service/UserDetailsServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-certificateauthority/target/classes/com/zhansheng/auth/service/UserJwt.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-certificateauthority/target/classes/com/zhansheng/auth/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-certificateauthority/target/classes/logback-spring.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-certificateauthority/target/classes/zs.keystore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-certificateauthority/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-certificateauthority/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-certificateauthority/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-certificateauthority/target/zs-service-certificateauthority-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-certificateauthority/target/zs-service-certificateauthority-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/zs-service-faultdetection/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/ManageFaultDetectionApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/config/MongoConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/config/ResourceServerConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/controller/BladeController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/controller/DegradationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/controller/ExcursionController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/controller/FanrepairlogController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/controller/FaultmanualController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/controller/IndexController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/controller/LoopDtoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/controller/ModelsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/controller/MonitorController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/controller/WindmillDtoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/dao/BaseMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/dao/BaseMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/dao/TbFanrepairlogMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/dao/TbFanrepairlogMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/dao/TbFaultmanualMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/dao/TbFaultmanualMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/dao/TbLoopDtoMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/dao/TbLoopDtoMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/dao/TbWindmillDtoMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/dao/TbWindmillDtoMapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/service/BaseService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/service/BladeServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/service/TbDegradationServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/service/TbExcursionServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/service/TbFanrepairlogServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/service/TbFaultmanualServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/service/TbIndexServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/service/TbLoopDtoServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/service/TbModelsServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/service/TbMonitorServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/com/zhansheng/faultdetection/service/TbWindmillDtoServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/logback-spring.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/classes/publickey.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/zs-service-faultdetection-0.0.1-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zs-service-faultdetection/target/zs-service-faultdetection-0.0.1-SNAPSHOT.jar.original" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zs-govern-center/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="598">
+              <caret line="61" lean-forward="true" selection-start-line="32" selection-start-column="3" selection-end-line="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zs-govern-gateway/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="99" column="12" lean-forward="true" selection-start-line="72" selection-start-column="2" selection-end-line="99" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zs-management-system/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="235" column="12" selection-start-line="208" selection-end-line="235" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zs-service-certificateauthority/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="178">
+              <caret line="151" column="49" selection-start-line="151" selection-start-column="49" selection-end-line="151" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/zs-service-faultdetection/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="328">
+              <caret line="131" column="70" selection-start-line="131" selection-start-column="70" selection-end-line="131" selection-end-column="70" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/zs-govern-center/pom.xml" />
+        <option value="$PROJECT_DIR$/zs-govern-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/zs-management-system/pom.xml" />
+        <option value="$PROJECT_DIR$/zs-service-certificateauthority/pom.xml" />
+        <option value="$PROJECT_DIR$/zs-service-faultdetection/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/profiles/develop/maven3.2.1" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="1.8" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="width" value="1597" />
+    <option name="height" value="877" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="test_jenkins" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test_jenkins" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test_jenkins" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test_jenkins" type="462c0819:PsiDirectoryNode" />
+              <item name="zs-govern-center" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test_jenkins" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test_jenkins" type="462c0819:PsiDirectoryNode" />
+              <item name="zs-govern-gateway" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test_jenkins" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test_jenkins" type="462c0819:PsiDirectoryNode" />
+              <item name="zs-management-system" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test_jenkins" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test_jenkins" type="462c0819:PsiDirectoryNode" />
+              <item name="zs-service-certificateauthority" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="test_jenkins" type="b2602c69:ProjectViewProjectNode" />
+              <item name="test_jenkins" type="462c0819:PsiDirectoryNode" />
+              <item name="zs-service-faultdetection" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../fileopt" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\ThinkPad\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="83b8622a-de0a-4ec9-8140-732e1e00ff9d" name="Default" comment="" />
+      <created>1576678305413</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576678305413</updated>
+      <workItem from="1576678311653" duration="1364000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1364000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1616" height="886" extended-state="7" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="right" id="Palette" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info id="Image Layers" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info id="Capture Tool" />
+      <window_info id="Designer" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info anchor="right" id="Database" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/zs-govern-center/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="598">
+          <caret line="61" lean-forward="true" selection-start-line="32" selection-start-column="3" selection-end-line="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zs-govern-gateway/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="99" column="12" lean-forward="true" selection-start-line="72" selection-start-column="2" selection-end-line="99" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zs-management-system/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="235" column="12" selection-start-line="208" selection-end-line="235" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zs-service-certificateauthority/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="151" column="49" selection-start-line="151" selection-start-column="49" selection-end-line="151" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zs-service-faultdetection/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="131" column="70" selection-start-line="131" selection-start-column="70" selection-end-line="131" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

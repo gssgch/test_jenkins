@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.dao.TbRoleMapper">
+    <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.UserManager.TbRole">
+        <result column="F_Role_id" jdbcType="INTEGER" property="fRoleId"/>
+        <result column="F_Rolename" jdbcType="VARCHAR" property="fRolename"/>
+        <result column="F_Memo" jdbcType="VARCHAR" property="fMemo"/>
+        <result column="F_Createtime" jdbcType="VARCHAR" property="fCreatetime"/>
+        <result column="F_Updatetime" jdbcType="VARCHAR" property="fUpdatetime"/>
+        <result column="F_Createuser" jdbcType="VARCHAR" property="fCreateuser"/>
+    </resultMap>
+
+    <select id="findRoleList" resultMap="BaseResultMap">
+        select * from tb_role
+    </select>
+
+    <select id="findPageAndList" resultMap="BaseResultMap">
+        select * from tb_role r where r.F_Rolename like "%"#{roleName}"%"
+    </select>
+
+    <select id="findByRoleName" resultMap="BaseResultMap">
+    select r.F_Role_id,r.F_Rolename from tb_role r
+    </select>
+
+    <select id="findRoleName" resultMap="BaseResultMap">
+        select r.F_Rolename from tb_role r where F_Rolename = #{rolename}
+    </select>
+
+    <update id="updateRole" parameterType="com.zhansheng.framework.domain.UserManager.TbRole">
+        update tb_role set
+        F_Memo = #{fMemo},
+        F_Updatetime = #{fUpdatetime}
+        where
+        F_Role_id = #{fRoleId}
+    </update>
+
+    <!-- 保存用户 -->
+    <insert id="addRole" parameterType="com.zhansheng.framework.domain.UserManager.TbRole">
+        <!-- 配置插入操作后 , 获取插入数据的id -->
+        <selectKey keyProperty="fRoleId" keyColumn="F_Role_id" resultType="int" order="AFTER">
+            select last_insert_id();
+        </selectKey>
+        insert into tb_role
+        (F_Rolename,
+        F_Memo,
+        F_Createtime,
+        F_Updatetime,
+        F_Createuser)
+        values
+        (#{fRolename},
+        #{fMemo},
+        #{fCreatetime},
+        #{fUpdatetime},
+        #{fCreateuser})
+    </insert>
+
+    <delete id="deleteByRoleId" parameterType="java.lang.Integer">
+        delete from tb_role where F_Role_id = #{roleId}
+    </delete>
+
+    <select id="findUserIdByRoleIdAndRoleName" resultMap="BaseResultMap">
+        select r.F_Role_id,r.F_Rolename from tb_role r where r.F_Role_id in
+        (select ur.F_Role_id from tb_user_role ur where ur.F_User_id = #{userId})
+    </select>
+
+    <select id="findRoleNameByRoleName" resultMap="BaseResultMap">
+        select r.F_Rolename from tb_role r where r.F_Rolename = #{roleName}
+    </select>
+
+</mapper>

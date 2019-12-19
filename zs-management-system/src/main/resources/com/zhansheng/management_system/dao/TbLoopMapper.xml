@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.dao.TbLoopMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.UserManager.TbLoop">
+        <result column="F_loop_id" jdbcType="INTEGER" property="fLoopId"/>
+        <result column="F_loop_name" jdbcType="VARCHAR" property="fLoopName"/>
+    </resultMap>
+
+
+
+    <!--查询环路下的风机数量-->
+    <select id="countLoop" resultType="java.lang.Integer">
+        select  COUNT(*) from tb_draughtfan d where d.F_draught_id in (select dl.F_draught_id from tb_draughtfan_loop
+        dl where dl.F_loop_id = #{loopId}
+        )
+    </select>
+
+    <!--通过风厂id 查询风厂下的所有环路-->
+    <select id="findPageList" resultMap="BaseResultMap">
+        SELECT lw.F_Windmill_id,lw.F_loop_id,l.F_loop_name FROM tb_loop_windmill lw
+        INNER JOIN tb_loop l ON lw.F_loop_id = l.F_loop_id
+        AND lw.F_Windmill_id = #{windmillId}
+        ORDER BY
+        lw.F_Windmill_id, l.F_loop_id
+    </select>
+
+    <!--通过风厂id 和 环路id 查询-->
+    <select id="findByLoopIdAndList" resultMap="BaseResultMap">
+        SELECT lw.F_Windmill_id,lw.F_loop_id,l.F_loop_name FROM tb_loop_windmill lw
+        INNER JOIN tb_loop l ON lw.F_loop_id = l.F_loop_id
+        AND lw.F_Windmill_id = #{windmillId} and lw.F_loop_id = #{loopId}
+        ORDER BY
+        lw.F_Windmill_id, l.F_loop_id
+    </select>
+
+
+
+
+    <update id="updateLoop" parameterType="com.zhansheng.framework.domain.UserManager.Loop">
+        update tb_loop set
+        F_loop_name = #{fLoopName}
+        where F_loop_id = #{fLoopId}
+    </update>
+
+    <insert id="addLoop" parameterType="com.zhansheng.framework.domain.UserManager.Loop">
+        <!-- 配置插入操作后，获取插入数据的id -->
+        <selectKey keyProperty="fLoopId" keyColumn="F_loop_id" resultType="int" order="AFTER">
+            select last_insert_id();
+        </selectKey>
+        insert into tb_loop (F_loop_name) values (#{fLoopName});
+    </insert>
+
+    <delete id="deleteById" parameterType="java.lang.Integer">
+        delete from tb_loop where F_loop_id = #{loopId}
+    </delete>
+
+    <delete id="deleteLoop" >
+        delete from tb_loop
+    </delete>
+
+    <select id="findByloopIdAndDraughtfanList" resultMap="BaseResultMap">
+        SELECT * FROM tb_loop l WHERE l.F_loop_id IN
+        (SELECT lw.F_loop_id FROM tb_loop_windmill lw WHERE lw.F_Windmill_id = #{windmillId})
+    </select>
+
+
+    <select id="findByLoopName" resultMap="BaseResultMap">
+        select l.F_loop_id,l.F_loop_name from tb_loop l where F_loop_name = #{loopnmae}
+    </select>
+
+
+</mapper>

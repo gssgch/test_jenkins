@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.faultdetection.dao.TbWindmillDtoMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.UserManager.TbWindmill">
+        <result column="F_Windmill_id" jdbcType="INTEGER" property="fWindmillId"/>
+        <result column="F_Windmill_name" jdbcType="VARCHAR" property="fWindmillName"/>
+        <result column="F_Createuser" jdbcType="VARCHAR" property="fCreateuser"/>
+        <result column="F_Createtime" jdbcType="VARCHAR" property="fCreatetime"/>
+        <result column="F_Updatetime" jdbcType="VARCHAR" property="fUpdatetime"/>
+    </resultMap>
+
+
+
+    <select id="findList" resultMap="BaseResultMap">
+        select * from tb_windmill
+    </select>
+
+</mapper>

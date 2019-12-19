@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.AIdao.TbAImodelColumnsMapper">
+  <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.aiManager.TbAImodelcolumns">
+    <result column="modelKey" jdbcType="VARCHAR" property="modelkey" />
+    <result column="iterNum" jdbcType="INTEGER" property="iternum" />
+    <result column="testDataNum" jdbcType="INTEGER" property="testdatanum" />
+    <result column="modeldescc" jdbcType="VARCHAR" property="modeldescc" />
+    <result column="algoName" jdbcType="VARCHAR" property="algoname" />
+    <result column="shellPath" jdbcType="VARCHAR" property="shellpath" />
+    <result column="sfdescc" jdbcType="VARCHAR" property="sfdescc" />
+    <result column="available" jdbcType="VARCHAR" property="available" />
+    <result column="fanNums" jdbcType="VARCHAR" property="fannums" />
+    <result column="startTime" jdbcType="TIMESTAMP" property="starttime" />
+    <result column="endTime" jdbcType="TIMESTAMP" property="endtime" />
+    <result column="dataPath" jdbcType="VARCHAR" property="datapath" />
+    <result column="shares" jdbcType="INTEGER" property="shares" />
+    <result column="featureColumns" jdbcType="VARCHAR" property="featureColumns" />
+    <result column="featureshellpath" jdbcType="VARCHAR" property="featureshellpath" />
+    <result column="selColumns" jdbcType="VARCHAR" property="selcolumns" />
+  </resultMap>
+
+  <select id="findColumns" resultMap="BaseResultMap">
+    SELECT
+      m.modelKey,
+      m.iterNum,
+      m.testDataNum,
+      m.descc modeldescc,
+      am.algoName,
+      am.shellPath,
+      am.descc sfdescc,
+      am.available,
+      fs.fanNums,
+      fs.startTime,
+      fs.endTime,
+      fs.dataPath,
+      fs.shares,
+      fe.shellPath featureshellpath,
+      fe.featureColumns,
+      rs.selColumns
+    FROM
+      ai_model m
+      LEFT JOIN ai_algorithm am ON m.algoKey = am.algoKey
+      LEFT JOIN ai_featureSelect fs ON m.featureSelKey = fs.featureSelKey
+      LEFT JOIN ai_featureEngin fe ON fs.featureKey = fe.featureKey
+      LEFT JOIN ai_rawfieldselect rs ON fe.selectKey = rs.selectKey
+    WHERE
+    1 = 1
+    and  m.modelKey = #{modelkey}
+    ORDER BY
+    m.createTime DESC
+  </select>
+</mapper>

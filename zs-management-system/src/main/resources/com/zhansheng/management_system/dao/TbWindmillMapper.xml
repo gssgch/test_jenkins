@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.dao.TbWindmillMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.UserManager.TbWindmill">
+        <result column="F_Windmill_id" jdbcType="INTEGER" property="fWindmillId"/>
+        <result column="F_Windmill_name" jdbcType="VARCHAR" property="fWindmillName"/>
+        <result column="F_Createuser" jdbcType="VARCHAR" property="fCreateuser"/>
+        <result column="F_Createtime" jdbcType="VARCHAR" property="fCreatetime"/>
+        <result column="F_Updatetime" jdbcType="VARCHAR" property="fUpdatetime"/>
+    </resultMap>
+
+
+    <select id="findByWindmillName" resultMap="BaseResultMap">
+        select F_Windmill_name from tb_windmill
+    </select>
+
+
+    <insert id="addWindmill" parameterType="com.zhansheng.framework.domain.UserManager.TbWindmill">
+        <!-- 配置插入操作后，获取插入数据的id -->
+        <selectKey keyProperty="fWindmillId" keyColumn="F_Windmill_id" resultType="int" order="AFTER">
+            select last_insert_id();
+        </selectKey>
+        insert into tb_windmill
+        (F_Windmill_name,F_Createuser,F_Createtime,F_Updatetime)
+        values
+        (#{fWindmillName},#{fCreateuser},#{fCreatetime},#{fUpdatetime})
+    </insert>
+
+    <delete id="deleteById" parameterType="java.lang.Integer">
+        delete from tb_windmill where F_Windmill_id = #{windmillId}
+    </delete>
+
+    <update id="updateByWindmill" parameterType="com.zhansheng.framework.domain.UserManager.TbWindmill">
+        update tb_windmill set
+        F_Windmill_name = #{fWindmillName},
+        F_Updatetime = #{fUpdatetime}
+        where F_Windmill_id = #{fWindmillId}
+    </update>
+
+    <select id="findList" resultMap="BaseResultMap">
+        select * from tb_windmill
+    </select>
+
+    <select id="findByWindmillId" resultType="int">
+        select w.F_Windmill_id from tb_windmill w
+    </select>
+
+
+</mapper>

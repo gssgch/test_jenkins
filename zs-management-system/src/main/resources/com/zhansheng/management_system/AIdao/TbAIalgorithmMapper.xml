@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.AIdao.TbAIalgorithmMapper">
+  <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.aiManager.TbAIalgorithm">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="algoKey" jdbcType="VARCHAR" property="algokey" />
+    <result column="algoName" jdbcType="VARCHAR" property="algoname" />
+    <result column="topic" jdbcType="VARCHAR" property="topic" />
+    <result column="shellPath" jdbcType="VARCHAR" property="shellpath" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="available" jdbcType="VARCHAR" property="available" />
+    <result column="descc" jdbcType="VARCHAR" property="descc" />
+  </resultMap>
+
+  <select id="findList" resultMap="BaseResultMap">
+    SELECT
+    *
+    FROM
+    ai_algorithm a
+    WHERE
+    1 = 1
+    <if test="algokey != null and algokey != '' ">
+     and a.algoKey = #{algokey}
+    </if>
+    <if test="topic != null and topic != '' ">
+     and a.topic = #{topic}
+    </if>
+    ORDER BY
+    a.createTime DESC
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ai_algorithm
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zhansheng.framework.domain.aiManager.TbAIalgorithm">
+    <selectKey keyProperty="id" keyColumn="id" resultType="INTEGER" order="AFTER">
+      select last_insert_id();
+    </selectKey>
+    insert into ai_algorithm (id, algoKey, algoName,
+      topic, shellPath, createTime, 
+      available, descc)
+    values (#{id,jdbcType=INTEGER}, #{algokey,jdbcType=VARCHAR}, #{algoname,jdbcType=VARCHAR},
+      #{topic,jdbcType=VARCHAR}, #{shellpath,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{available,jdbcType=VARCHAR}, now())
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhansheng.framework.domain.aiManager.TbAIalgorithm">
+    update ai_algorithm
+    <set>
+      <if test="algokey != null">
+        algoKey = #{algokey,jdbcType=VARCHAR},
+      </if>
+      <if test="algoname != null">
+        algoName = #{algoname,jdbcType=VARCHAR},
+      </if>
+      <if test="topic != null">
+        topic = #{topic,jdbcType=VARCHAR},
+      </if>
+      <if test="shellpath != null">
+        shellPath = #{shellpath,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="available != null">
+        available = #{available,jdbcType=VARCHAR},
+      </if>
+      <if test="descc != null">
+        descc = #{descc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhansheng.framework.domain.aiManager.TbAIalgorithm">
+    update ai_algorithm
+    set algoKey = #{algokey,jdbcType=VARCHAR},
+      algoName = #{algoname,jdbcType=VARCHAR},
+      topic = #{topic,jdbcType=VARCHAR},
+      shellPath = #{shellpath,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      available = #{available,jdbcType=VARCHAR},
+      descc = #{descc,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

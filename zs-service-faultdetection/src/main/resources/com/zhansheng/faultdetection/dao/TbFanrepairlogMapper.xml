@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.faultdetection.dao.TbFanrepairlogMapper">
+  <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbFanrepairlog">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="fannum" jdbcType="INTEGER" property="fannum" />
+    <result column="fault" jdbcType="VARCHAR" property="fault" />
+    <result column="faultrep" jdbcType="VARCHAR" property="faultrep" />
+    <result column="repairtime" jdbcType="TIMESTAMP" property="repairtime" />
+  </resultMap>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from fanrepairlog
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+
+  <insert id="insert" parameterType="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbFanrepairlog">
+
+    <!-- 配置插入操作后，获取插入数据的id -->
+    <selectKey keyProperty="id" keyColumn="id" resultType="int" order="AFTER">
+      select last_insert_id();
+    </selectKey>
+
+    insert into fanrepairlog ( createtime, fannum,
+      fault, faultrep, repairtime
+      )
+    values ( #{createtime,jdbcType=TIMESTAMP}, #{fannum,jdbcType=INTEGER},
+      #{fault,jdbcType=VARCHAR}, #{faultrep,jdbcType=VARCHAR}, #{repairtime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+
+
+  <update id="updateByPrimaryKey" parameterType="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbFanrepairlog">
+    update fanrepairlog
+    set fannum = #{fannum,jdbcType=INTEGER},
+      fault = #{fault,jdbcType=VARCHAR},
+      faultrep = #{faultrep,jdbcType=VARCHAR},
+      repairtime = #{repairtime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+  <select id="findList" resultMap="BaseResultMap">
+    select * from fanrepairlog
+  </select>
+
+</mapper>

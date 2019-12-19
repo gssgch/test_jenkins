@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.dao.TbDictMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbDictKey">
+        <id column="F_DictId" jdbcType="INTEGER" property="fDictid"/>
+        <result column="F_DictType" jdbcType="VARCHAR" property="fDicttype"/>
+        <result column="F_DictKey" jdbcType="INTEGER" property="fDictkey"/>
+        <result column="F_DictValue" jdbcType="VARCHAR" property="fDictvalue"/>
+    </resultMap>
+
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from dict
+    where F_DictId = #{fDictid,jdbcType=INTEGER}
+  </delete>
+
+
+    <insert id="insert" parameterType="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbDictKey">
+
+
+        <!-- 配置插入操作后，获取插入数据的id -->
+        <selectKey keyProperty="fDictid" keyColumn="F_DictId" resultType="int" order="AFTER">
+            select last_insert_id();
+        </selectKey>
+
+        insert into dict (F_DictId, F_DictType, F_DictKey,
+        F_DictValue)
+        values (#{fDictid,jdbcType=INTEGER}, #{fDicttype,jdbcType=VARCHAR}, #{fDictkey,jdbcType=INTEGER},
+        #{fDictvalue,jdbcType=VARCHAR})
+    </insert>
+
+    <update id="updateByPrimaryKey"
+            parameterType="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbDictKey">
+    update dict
+    set F_DictType = #{fDicttype,jdbcType=VARCHAR},
+      F_DictKey = #{fDictkey,jdbcType=INTEGER},
+      F_DictValue = #{fDictvalue,jdbcType=VARCHAR}
+    where F_DictId = #{fDictid,jdbcType=INTEGER}
+  </update>
+
+
+    <!--通过字典类型查询字典值-->
+    <select id="findByKey" resultMap="BaseResultMap">
+        select * from dict where F_DictType = #{key}
+    </select>
+
+
+    <select id="findByList" resultMap="BaseResultMap">
+        select * from dict
+    </select>
+
+
+</mapper>

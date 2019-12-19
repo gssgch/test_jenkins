@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.AIdao.DictTopicfieldMapper">
+    <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.aiManager.TbDictTopicfield">
+        <id column="F_DictId" jdbcType="INTEGER" property="fDictid"/>
+        <result column="F_DictType" jdbcType="VARCHAR" property="fDicttype"/>
+        <result column="F_DictKey" jdbcType="VARCHAR" property="fDictkey"/>
+        <result column="F_DictValue" jdbcType="VARCHAR" property="fDictvalue"/>
+    </resultMap>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from dict_topicfield
+    where F_DictId = #{fDictid,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="com.zhansheng.framework.domain.aiManager.TbDictTopicfield">
+    insert into dict_topicfield (F_DictId, F_DictType, F_DictKey, 
+      F_DictValue)
+    values (#{fDictid,jdbcType=INTEGER}, #{fDicttype,jdbcType=VARCHAR}, #{fDictkey,jdbcType=VARCHAR}, 
+      #{fDictvalue,jdbcType=VARCHAR})
+  </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.zhansheng.framework.domain.aiManager.TbDictTopicfield">
+        update dict_topicfield
+        <set>
+            <if test="fDicttype != null">
+                F_DictType = #{fDicttype,jdbcType=VARCHAR},
+            </if>
+            <if test="fDictkey != null">
+                F_DictKey = #{fDictkey,jdbcType=VARCHAR},
+            </if>
+            <if test="fDictvalue != null">
+                F_DictValue = #{fDictvalue,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where F_DictId = #{fDictid,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.zhansheng.framework.domain.aiManager.TbDictTopicfield">
+    update dict_topicfield
+    set F_DictType = #{fDicttype,jdbcType=VARCHAR},
+      F_DictKey = #{fDictkey,jdbcType=VARCHAR},
+      F_DictValue = #{fDictvalue,jdbcType=VARCHAR}
+    where F_DictId = #{fDictid,jdbcType=INTEGER}
+  </update>
+
+    <select id="findByTopic" resultMap="BaseResultMap" >
+        <!--通过字典类型查询字典值-->
+        select * from dict_topicfield where F_DictType = #{fDicttype} order by F_DictId desc
+    </select>
+</mapper>

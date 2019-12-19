@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.dao.TbLoopDraughtfanMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.UserManager.TbDraughtfanLoop">
+        <result column="F_loop_id" jdbcType="INTEGER" property="fLoopId"/>
+        <result column="F_draught_id" jdbcType="INTEGER" property="fDraughtId"/>
+    </resultMap>
+
+    <delete id="deleteLoopAndDraughtfan">
+        delete from tb_draughtfan_loop
+    </delete>
+
+    <select id="findByLoopIdAndDraughtfanId" resultMap="BaseResultMap">
+         SELECT d.F_draught_id FROM tb_draughtfan d WHERE d.F_draught_id IN
+        (SELECT dl.F_draught_id FROM tb_draughtfan_loop dl WHERE F_loop_id = #{loopId})
+    </select>
+
+    <delete id="deleteByloopIdAndDraughtfan" parameterType="java.lang.Integer">
+        delete from tb_draughtfan_loop where F_loop_id = #{loopId}
+    </delete>
+
+
+
+</mapper>

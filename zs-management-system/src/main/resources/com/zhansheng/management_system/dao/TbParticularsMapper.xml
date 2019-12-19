@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.dao.TbParticularsMapper">
+
+
+    <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbParticularsMysql">
+        <id column="Id" jdbcType="INTEGER" property="id"/>
+        <result column="DateAcqTime" jdbcType="VARCHAR" property="dateacqtime"/>
+        <result column="WTNO" jdbcType="INTEGER" property="wtno"/>
+        <result column="GridPower" jdbcType="VARCHAR" property="gridpower"/>
+        <result column="GridRePower" jdbcType="VARCHAR" property="gridrepower"/>
+        <result column="ConvertPower" jdbcType="VARCHAR" property="convertpower"/>
+        <result column="Grid_UL1_Visu" jdbcType="VARCHAR" property="gridUl1Visu"/>
+        <result column="Grid_UL2_Visu" jdbcType="VARCHAR" property="gridUl2Visu"/>
+        <result column="Grid_UL3_Visu" jdbcType="VARCHAR" property="gridUl3Visu"/>
+        <result column="Grid_I1_Visu" jdbcType="VARCHAR" property="gridI1Visu"/>
+        <result column="Grid_I2_Visu" jdbcType="VARCHAR" property="gridI2Visu"/>
+        <result column="Grid_I3_Visu" jdbcType="VARCHAR" property="gridI3Visu"/>
+        <result column="Grid_Fq1_Visu" jdbcType="VARCHAR" property="gridFq1Visu"/>
+        <result column="Grid_Fq2_Visu" jdbcType="VARCHAR" property="gridFq2Visu"/>
+        <result column="Grid_Fq3_Visu" jdbcType="VARCHAR" property="gridFq3Visu"/>
+        <result column="GridCospi" jdbcType="VARCHAR" property="gridcospi"/>
+        <result column="WindSpeed" jdbcType="VARCHAR" property="windspeed"/>
+        <result column="wind_Spd_30s" jdbcType="VARCHAR" property="windSpd30s"/>
+        <result column="wind_Spd_10m" jdbcType="VARCHAR" property="windSpd10m"/>
+        <result column="wind_direct" jdbcType="VARCHAR" property="windDirect"/>
+        <result column="Win_Dir_60s" jdbcType="VARCHAR" property="winDir60s"/>
+        <result column="Visu_Rot_Spd" jdbcType="VARCHAR" property="visuRotSpd"/>
+        <result column="Pit_Pos_123" jdbcType="VARCHAR" property="pitPos123"/>
+        <result column="PitchAngle1" jdbcType="VARCHAR" property="pitchangle1"/>
+        <result column="PitchAngle2" jdbcType="VARCHAR" property="pitchangle2"/>
+        <result column="PitchAngle3" jdbcType="VARCHAR" property="pitchangle3"/>
+        <result column="Gen_Spd" jdbcType="VARCHAR" property="genSpd"/>
+        <result column="T_GW_U1_Visu" jdbcType="VARCHAR" property="tGwU1Visu"/>
+        <result column="T_GW_V1_Visu" jdbcType="VARCHAR" property="tGwV1Visu"/>
+        <result column="T_GW_W1_Visu" jdbcType="VARCHAR" property="tGwW1Visu"/>
+        <result column="GenAir_Temp1" jdbcType="VARCHAR" property="genairTemp1"/>
+        <result column="GenAir_Temp2" jdbcType="VARCHAR" property="genairTemp2"/>
+        <result column="T_GB_A_Visu" jdbcType="VARCHAR" property="tGbAVisu"/>
+        <result column="T_GB_B_Visu" jdbcType="VARCHAR" property="tGbBVisu"/>
+        <result column="T_GBS_Out_Visu" jdbcType="VARCHAR" property="tGbsOutVisu"/>
+        <result column="T_GBS_In_Visu" jdbcType="VARCHAR" property="tGbsInVisu"/>
+        <result column="T_GBO_Visu" jdbcType="VARCHAR" property="tGboVisu"/>
+        <result column="T_GBW_Visu" jdbcType="VARCHAR" property="tGbwVisu"/>
+        <result column="Hyd_Sys_Press" jdbcType="VARCHAR" property="hydSysPress"/>
+        <result column="Hyd_Sys_Press2" jdbcType="VARCHAR" property="hydSysPress2"/>
+        <result column="yaw_position" jdbcType="VARCHAR" property="yawPosition"/>
+        <result column="T_Outd_Visu" jdbcType="VARCHAR" property="tOutdVisu"/>
+        <result column="T_Nace_Visu" jdbcType="VARCHAR" property="tNaceVisu"/>
+        <result column="T_Tb_Cabinet" jdbcType="VARCHAR" property="tTbCabinet"/>
+        <result column="T_Na_Cabinet" jdbcType="VARCHAR" property="tNaCabinet"/>
+        <result column="Nace_Vib_X" jdbcType="VARCHAR" property="naceVibX"/>
+        <result column="Nace_Vib_Y" jdbcType="VARCHAR" property="naceVibY"/>
+        <result column="Vib_Effec_Val" jdbcType="VARCHAR" property="vibEffecVal"/>
+        <result column="twist_pos" jdbcType="VARCHAR" property="twistPos"/>
+        <result column="Gri_Ener_D" jdbcType="VARCHAR" property="griEnerD"/>
+        <result column="Gri_Ener_M" jdbcType="VARCHAR" property="griEnerM"/>
+        <result column="Gri_Ener_Y" jdbcType="VARCHAR" property="griEnerY"/>
+        <result column="Gri_Avail_D" jdbcType="VARCHAR" property="griAvailD"/>
+        <result column="Gri_Avail_M" jdbcType="VARCHAR" property="griAvailM"/>
+        <result column="Gri_Avail_Y" jdbcType="VARCHAR" property="griAvailY"/>
+        <result column="WTState" jdbcType="VARCHAR" property="wtstate"/>
+        <result column="GOilTemp" jdbcType="VARCHAR" property="goiltemp"/>
+        <result column="OilLevel" jdbcType="VARCHAR" property="oillevel"/>
+        <result column="hydraulic_pump_num" jdbcType="VARCHAR" property="hydraulicPumpNum"/>
+        <result column="GenCoolWaterTemp" jdbcType="VARCHAR" property="gencoolwatertemp"/>
+        <result column="GebAirTemp" jdbcType="VARCHAR" property="gebairtemp"/>
+        <result column="TowerTemp" jdbcType="VARCHAR" property="towertemp"/>
+        <result column="ConverCoolWaterTemp" jdbcType="VARCHAR" property="convercoolwatertemp"/>
+        <result column="NacelleHumidity" jdbcType="VARCHAR" property="nacellehumidity"/>
+        <result column="WarnState" jdbcType="VARCHAR" property="warnstate"/>
+        <result column="ErroState" jdbcType="VARCHAR" property="errostate"/>
+        <result column="MeanPower" jdbcType="VARCHAR" property="meanpower"/>
+        <result column="gVibFFT1Frequency" jdbcType="VARCHAR" property="gvibfft1frequency"/>
+        <result column="gVibFFT1Level" jdbcType="VARCHAR" property="gvibfft1level"/>
+        <result column="gVibFFT2Frequency" jdbcType="VARCHAR" property="gvibfft2frequency"/>
+        <result column="gVibFFT2Level" jdbcType="VARCHAR" property="gvibfft2level"/>
+        <result column="gWindSpeed_ultrasonic" jdbcType="VARCHAR" property="gwindspeedUltrasonic"/>
+        <result column="gWindSpeed_mechanical" jdbcType="VARCHAR" property="gwindspeedMechanical"/>
+        <result column="gWindDirection_ultrasonic" jdbcType="VARCHAR" property="gwinddirectionUltrasonic"/>
+        <result column="gWindDirection_mechanical" jdbcType="VARCHAR" property="gwinddirectionMechanical"/>
+        <result column="gWindTurbulenceCal_ult" jdbcType="VARCHAR" property="gwindturbulencecalUlt"/>
+        <result column="gWindTurbulenceCal_Mec" jdbcType="VARCHAR" property="gwindturbulencecalMec"/>
+        <result column="doPitchBearLub" jdbcType="VARCHAR" property="dopitchbearlub"/>
+        <result column="doPitchGearLub" jdbcType="VARCHAR" property="dopitchgearlub"/>
+        <result column="doLubMainBearOilPump" jdbcType="VARCHAR" property="dolubmainbearoilpump"/>
+        <result column="doLubGbxOilPumpHiSp" jdbcType="VARCHAR" property="dolubgbxoilpumphisp"/>
+        <result column="doLubGbxOilPumpLoSp" jdbcType="VARCHAR" property="dolubgbxoilpumplosp"/>
+        <result column="gSafeTurbulenceCal_ult" jdbcType="VARCHAR" property="gsafeturbulencecalUlt"/>
+        <result column="gSafeTurbulenceCal_Mec" jdbcType="VARCHAR" property="gsafeturbulencecalMec"/>
+        <result column="gTowerFreqErr" jdbcType="VARCHAR" property="gtowerfreqerr"/>
+        <result column="gTowerFreqErr_MovA" jdbcType="VARCHAR" property="gtowerfreqerrMova"/>
+    </resultMap>
+
+
+    <select id="findList" resultMap="BaseResultMap">
+        select * from tb_particulars
+    </select>
+
+
+    <select id="particularOne" resultMap="BaseResultMap">
+          SELECT
+          pl.wind_Spd_30s,
+          pl.GridPower,pl.
+          Visu_Rot_Spd,pl.
+          Pit_Pos_123,
+          pl.DateAcqTime
+          FROM tb_particulars pl WHERE WTNO = #{draughtNumber} ORDER BY pl.DateAcqTime DESC LIMIT 1
+    </select>
+
+
+</mapper>

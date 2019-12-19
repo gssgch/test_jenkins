@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.faultdetection.dao.TbLoopDtoMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.UserManager.Loop">
+        <result column="F_loop_id" jdbcType="INTEGER" property="fLoopId"/>
+        <result column="F_loop_name" jdbcType="VARCHAR" property="fLoopName"/>
+    </resultMap>
+
+
+    <select id="findByloopIdAndDraughtfanList" resultMap="BaseResultMap">
+        SELECT * FROM tb_loop l WHERE l.F_loop_id IN
+        (SELECT lw.F_loop_id FROM tb_loop_windmill lw WHERE lw.F_Windmill_id = #{windmillId})
+    </select>
+
+</mapper>

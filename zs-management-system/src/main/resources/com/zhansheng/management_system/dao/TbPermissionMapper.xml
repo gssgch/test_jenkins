@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.dao.TbPermissionMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.UserManager.TbPermission">
+        <id column="F_Permission_id" jdbcType="INTEGER" property="fPermissionId"/>
+        <result column="F_ParentId" jdbcType="INTEGER" property="fParentId"/>
+        <result column="F_Poername" jdbcType="VARCHAR" property="fPoername"/>
+        <result column="F_Permission" jdbcType="VARCHAR" property="fPermission"/>
+        <result column="F_Createuser" jdbcType="VARCHAR" property="fCreateuser"/>
+        <result column="F_Updateuser" jdbcType="VARCHAR" property="fUpdateuser"/>
+        <result column="F_Type" jdbcType="INTEGER" property="fType"/>
+        <result column="F_Sort" jdbcType="INTEGER" property="fSort"/>
+        <result column="F_Updatetime" jdbcType="VARCHAR" property="fUpdatetime"/>
+    </resultMap>
+
+    <select id="listParents" resultMap="BaseResultMap">
+        SELECT t.F_Permission_id,t.F_ParentId,t.F_Poername FROM tb_permission t
+    </select>
+
+    <select id="findRoleIdByPermissionIdAndPermissionName" resultMap="BaseResultMap">
+        SELECT p.F_Permission_id,p.F_Poername FROM tb_permission p WHERE p.F_Permission_id IN
+	    (SELECT rp.F_Permission_id FROM tb_role_permission rp WHERE rp.F_Role_id = #{roleId})
+    </select>
+
+</mapper>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.dao.TbUserMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.UserManager.TbUser">
+        <result column="F_User_id" jdbcType="INTEGER" property="fUserId"/>
+        <result column="F_Username" jdbcType="VARCHAR" property="fUsername"/>
+        <result column="F_Password" jdbcType="VARCHAR" property="fPassword"/>
+        <result column="F_Telepone" jdbcType="VARCHAR" property="fTelepone"/>
+        <result column="F_Email" jdbcType="VARCHAR" property="fEmail"/>
+        <result column="F_Sex" jdbcType="VARCHAR" property="fSex"/>
+        <result column="F_Createuser" jdbcType="VARCHAR" property="fCreateuser"/>
+        <result column="F_Createtime" jdbcType="VARCHAR" property="fCreatetime"/>
+        <result column="F_Updatetime" jdbcType="VARCHAR" property="fUpdatetime"/>
+        <result column="F_Userstories" jdbcType="VARCHAR" property="fUserstories"/>
+    </resultMap>
+
+    <select id="findList" resultMap="BaseResultMap">
+        select * from tb_user
+    </select>
+
+    <select id="findByPageUsername" resultMap="BaseResultMap">
+        select * from tb_user u where u.F_Username like "%"#{username}"%"
+    </select>
+
+    <select id="findOne" resultMap="BaseResultMap">
+        select * from tb_user where F_Username = #{username}
+    </select>
+
+    <!-- 保存用户 -->
+    <insert id="addUser" parameterType="com.zhansheng.framework.domain.UserManager.TbUser">
+        <!-- 配置插入操作后，获取插入数据的id -->
+        <selectKey keyProperty="fUserId" keyColumn="F_User_id" resultType="int" order="AFTER">
+            select last_insert_id();
+        </selectKey>
+
+
+        insert into tb_user
+        (F_Username,
+        F_Password,
+        F_Telepone,
+        F_Email,
+        F_Sex,
+        F_Createuser,
+        F_Createtime,
+        F_Updatetime,
+        F_Userstories)
+        values
+        (#{fUsername},#{fPassword},#{fTelepone},#{fEmail},#{fSex},#{fCreateuser},#{fCreatetime} ,#{fUpdatetime},#{fUserstories});
+    </insert>
+
+    <delete id="deleteId" parameterType="java.lang.Integer">
+        delete from tb_user where F_User_id = #{userId}
+    </delete>
+
+    <!-- 更新用户 -->
+    <update id="updateUser" parameterType="com.zhansheng.framework.domain.UserManager.TbUser">
+        update tb_user set
+         F_Telepone=#{fTelepone}
+        ,F_Email=#{fEmail}
+        ,F_Sex=#{fSex}
+        ,F_Updatetime=#{fUpdatetime}
+        ,F_Userstories=#{fUserstories}
+        where F_User_id=#{fUserId}
+    </update>
+
+</mapper>

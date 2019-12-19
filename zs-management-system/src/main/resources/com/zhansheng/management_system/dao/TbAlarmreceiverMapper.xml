@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.dao.TbAlarmreceiverMapper">
+
+
+    <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbAlarmreceiver">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="phone" jdbcType="VARCHAR" property="phone"/>
+        <result column="mail" jdbcType="VARCHAR" property="mail"/>
+        <result column="descb" jdbcType="VARCHAR" property="descb"/>
+    </resultMap>
+
+
+    <!--<select id="findAlar" resultMap="BaseResultMap">
+        select al.id,al.name from alarmreceiver al
+    </select>-->
+
+
+    <select id="findList" resultMap="BaseResultMap">
+        select *  from alarmreceiver
+    </select>
+
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from alarmreceiver
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+
+    <insert id="insert" parameterType="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbAlarmreceiver">
+
+        <selectKey keyProperty="id" keyColumn="id" resultType="int" order="AFTER">
+            select last_insert_id();
+        </selectKey>
+
+        insert into alarmreceiver ( name, phone,mail, descb)
+        values (#{name,jdbcType=VARCHAR},
+        #{phone,jdbcType=VARCHAR},
+        #{mail,jdbcType=VARCHAR},
+        #{descb,jdbcType=VARCHAR})
+    </insert>
+
+
+    <update id="updateByPrimaryKey"
+            parameterType="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbAlarmreceiver">
+    update alarmreceiver
+    set name = #{name,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      mail = #{mail,jdbcType=VARCHAR},
+      descb = #{descb,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+</mapper>

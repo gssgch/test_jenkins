@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.dao.TbUserRoleMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.UserManager.TbUserRole">
+        <result column="F_User_id" jdbcType="INTEGER" property="fUserId"/>
+        <result column="F_Role_id" jdbcType="INTEGER" property="fRoleId"/>
+    </resultMap>
+
+    <insert id="addUserRoles">
+        insert into tb_user_role(F_User_id, F_Role_id) values
+        <foreach collection="roleIds" item="roleId" separator=",">
+            (#{userId},#{roleId})
+        </foreach>
+    </insert>
+
+    <delete id="deleteUserAndRole" parameterType="java.lang.Integer">
+        delete from tb_user_role where F_User_id = #{userId}
+    </delete>
+
+    <delete id="deleteByRoleIdAndUserId" parameterType="java.lang.Integer">
+        delete from tb_user_role where F_Role_id = #{roleId}
+    </delete>
+
+</mapper>
+

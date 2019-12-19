@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.auth.dao.TbPermissionMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.UserManager.TbPermission">
+        <id column="F_Permission_id" jdbcType="INTEGER" property="fPermissionId"/>
+        <result column="F_ParentId" jdbcType="INTEGER" property="fParentId"/>
+        <result column="F_Poername" jdbcType="VARCHAR" property="fPoername"/>
+        <result column="F_Permission" jdbcType="VARCHAR" property="fPermission"/>
+        <result column="F_Createuser" jdbcType="VARCHAR" property="fCreateuser"/>
+        <result column="F_Updateuser" jdbcType="VARCHAR" property="fUpdateuser"/>
+        <result column="F_Type" jdbcType="INTEGER" property="fType"/>
+        <result column="F_Sort" jdbcType="INTEGER" property="fSort"/>
+        <result column="F_Updatetime" jdbcType="VARCHAR" property="fUpdatetime"/>
+    </resultMap>
+
+    <select id="selectPermissionByUserId" resultMap="BaseResultMap">
+      select p.F_Permission from tb_permission p where p.F_Permission_id in(
+	  select rp.F_Permission_id from tb_role_permission rp where F_Role_id in(
+	  select ur.F_Role_id from tb_user_role ur where ur.F_User_id = #{userId}
+	  )
+    )
+    </select>
+
+
+</mapper>

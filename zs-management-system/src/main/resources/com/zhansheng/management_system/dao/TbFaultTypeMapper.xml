@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.dao.TbFaultTypeMapper">
+
+
+    <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbFaultType">
+        <id column="fault_type_num" jdbcType="INTEGER" property="faultTypeNum"/>
+        <result column="fault_type" jdbcType="VARCHAR" property="faultType"/>
+        <result column="descb" jdbcType="VARCHAR" property="descb"/>
+    </resultMap>
+
+
+    <select id="findList" resultMap="BaseResultMap">
+        select * from fault_type
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from fault_type where fault_type_num = #{faultTypeNum,jdbcType=INTEGER}
+  </delete>
+
+
+    <insert id="insert" parameterType="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbFaultType">
+
+        <selectKey keyProperty="faultTypeNum" keyColumn="fault_type_num" resultType="int" order="AFTER">
+            select last_insert_id();
+        </selectKey>
+
+    insert into fault_type ( fault_type,
+        descb
+      )
+    values ( #{faultType,jdbcType=VARCHAR},
+             #{descb,jdbcType=VARCHAR}
+      )
+  </insert>
+
+
+    <update id="updateByPrimaryKey"
+            parameterType="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbFaultType">
+    update fault_type
+    set fault_type = #{faultType,jdbcType=VARCHAR},
+      descb = #{descb,jdbcType=VARCHAR}
+    where fault_type_num = #{faultTypeNum,jdbcType=INTEGER}
+  </update>
+
+
+</mapper>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.dao.TbWindmillLoopMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.UserManager.TbLoopWindmill">
+        <result column="F_Windmill_id" jdbcType="INTEGER" property="fWindmillId"/>
+        <result column="F_loop_id" jdbcType="INTEGER" property="fLoopId"/>
+    </resultMap>
+
+
+    <select id="find" resultMap="BaseResultMap">
+        select * from tb_loop_windmill
+    </select>
+
+
+    <insert id="addWindmillAndLoop">
+        insert into tb_loop_windmill (F_Windmill_id, F_loop_id) values (#{windmillId},#{loopId})
+    </insert>
+
+    <delete id="deleteByWindmillIdAndLoopId" parameterType="java.lang.Integer">
+        delete from tb_loop_windmill
+    </delete>
+
+    <delete id="deleteWindmillLoop" parameterType="java.lang.Integer">
+        delete from tb_loop_windmill where F_loop_id = #{loopId}
+    </delete>
+
+</mapper>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.AIdao.TbAImodelMapper">
+  <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.aiManager.TbAImodel">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="modelKey" jdbcType="VARCHAR" property="modelkey" />
+    <result column="topic" jdbcType="VARCHAR" property="topic" />
+    <result column="featureSelKey" jdbcType="VARCHAR" property="featureselkey" />
+    <result column="shares" jdbcType="INTEGER" property="shares" />
+    <result column="algoKey" jdbcType="VARCHAR" property="algokey" />
+    <result column="testDataNum" jdbcType="INTEGER" property="testdatanum" />
+    <result column="iterNum" jdbcType="INTEGER" property="iternum" />
+    <result column="modelPath" jdbcType="VARCHAR" property="modelpath" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="available" jdbcType="INTEGER" property="available" />
+    <result column="descc" jdbcType="VARCHAR" property="descc" />
+  </resultMap>
+
+  <select id="findList" resultMap="BaseResultMap">
+    SELECT
+    *
+    FROM
+    ai_model m
+    WHERE
+    1 = 1
+    <if test="modelkey != null and modelkey != '' ">
+    and  m.modelKey = #{modelkey}
+    </if>
+    <if test="topic != null and topic != '' ">
+      and  m.topic = #{topic}
+    </if>
+    ORDER BY
+    m.createTime DESC
+  </select>
+
+  <select id="findListByThreeKey" resultMap="BaseResultMap">
+    SELECT
+    *
+    FROM
+    ai_model m
+    WHERE
+    1 = 1
+      and  m.topic = #{topic}
+      and  m.featureSelKey = #{featureselkey}
+      and  m.algoKey = #{algokey}
+    ORDER BY
+    m.createTime DESC
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ai_model
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zhansheng.framework.domain.aiManager.TbAImodel">
+    <selectKey keyProperty="id" keyColumn="id" resultType="INTEGER" order="AFTER">
+      select last_insert_id();
+    </selectKey>
+    insert into ai_model (modelKey, topic,
+      featureSelKey, shares, algoKey,
+      testDataNum, iterNum, modelPath, 
+      createTime, available, descc
+      )
+    values ( #{modelkey,jdbcType=VARCHAR}, #{topic,jdbcType=VARCHAR},
+      #{featureselkey,jdbcType=VARCHAR}, #{shares,jdbcType=INTEGER}, #{algokey,jdbcType=VARCHAR},
+      #{testdatanum,jdbcType=INTEGER}, #{iternum,jdbcType=INTEGER}, #{modelpath,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{available,jdbcType=INTEGER}, #{descc,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhansheng.framework.domain.aiManager.TbAImodel">
+    update ai_model
+    <set>
+      <if test="modelkey != null">
+        modelKey = #{modelkey,jdbcType=VARCHAR},
+      </if>
+      <if test="topic != null">
+        topic = #{topic,jdbcType=VARCHAR},
+      </if>
+      <if test="featureselkey != null">
+        featureSelKey = #{featureselkey,jdbcType=VARCHAR},
+      </if>
+      <if test="shares != null">
+        shares = #{shares,jdbcType=INTEGER},
+      </if>
+      <if test="algokey != null">
+        algoKey = #{algokey,jdbcType=VARCHAR},
+      </if>
+      <if test="testdatanum != null">
+        testDataNum = #{testdatanum,jdbcType=INTEGER},
+      </if>
+      <if test="iternum != null">
+        iterNum = #{iternum,jdbcType=INTEGER},
+      </if>
+      <if test="modelpath != null">
+        modelPath = #{modelpath,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="available != null">
+        available = #{available,jdbcType=INTEGER},
+      </if>
+      <if test="descc != null">
+        descc = #{descc,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhansheng.framework.domain.aiManager.TbAImodel">
+    update ai_model
+    set modelKey = #{modelkey,jdbcType=VARCHAR},
+      topic = #{topic,jdbcType=VARCHAR},
+      featureSelKey = #{featureselkey,jdbcType=VARCHAR},
+      shares = #{shares,jdbcType=INTEGER},
+      algoKey = #{algokey,jdbcType=VARCHAR},
+      testDataNum = #{testdatanum,jdbcType=INTEGER},
+      iterNum = #{iternum,jdbcType=INTEGER},
+      modelPath = #{modelpath,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      available = #{available,jdbcType=INTEGER},
+      descc = #{descc,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

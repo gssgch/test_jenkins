@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.dao.TbFanpowerreportMapper">
+
+
+    <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbFanpowerreport">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="F_Draught_number" jdbcType="INTEGER" property="fDraughtNumber"/>
+        <result column="F_year" jdbcType="VARCHAR" property="fYear"/>
+        <result column="F_month" jdbcType="VARCHAR" property="fMonth"/>
+        <result column="F_day" jdbcType="VARCHAR" property="fDay"/>
+        <result column="F_power" jdbcType="DOUBLE" property="fPower"/>
+    </resultMap>
+
+
+    <select id="findByMonthAndDay2"
+            parameterType="com.zhansheng.framework.domain.UserManager.Industrialcontrol.request.PowerrePort"
+            resultMap="BaseResultMap">
+        select * from fanpowerreport w
+        <where>
+            <if test="powerrePort.ymd == 1">
+                w.F_month = -1 AND w.F_day = -1
+            </if>
+            <if test="powerrePort.ymd == 2">
+                w.F_month != -1 AND w.F_day = -1
+            </if>
+
+            <if test="powerrePort.ymd == 3">
+                w.F_month != -1 AND w.F_day != -1
+            </if>
+
+             <if test="powerrePort.fyear != null and powerrePort.fyear != '' ">
+                 AND w.F_year = #{powerrePort.fyear}
+             </if>
+             <if test="powerrePort.fmonth != null  and powerrePort.fmonth != '' ">
+                 AND w.F_month = #{powerrePort.fmonth}
+             </if>
+             <if test="powerrePort.number != null and powerrePort.number != '' ">
+                 AND w.F_Draught_number = #{powerrePort.number}
+             </if>
+        </where>
+
+    </select>
+
+
+
+
+</mapper>

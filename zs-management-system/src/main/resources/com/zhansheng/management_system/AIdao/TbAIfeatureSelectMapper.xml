@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.AIdao.TbAIfeatureSelectMapper">
+  <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.aiManager.TbAIfeatureSelect">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="featureSelKey" jdbcType="VARCHAR" property="featureselkey" />
+    <result column="fanNums" jdbcType="VARCHAR" property="fannums" />
+    <result column="topic" jdbcType="VARCHAR" property="topic" />
+    <result column="featureKey" jdbcType="VARCHAR" property="featurekey" />
+    <result column="dataPath" jdbcType="VARCHAR" property="datapath" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="shares" jdbcType="INTEGER" property="shares" />
+    <result column="startTime" jdbcType="TIMESTAMP" property="starttime" />
+    <result column="endTime" jdbcType="TIMESTAMP" property="endtime" />
+    <result column="selColumns" jdbcType="VARCHAR" property="selcolumns" />
+  </resultMap>
+
+  <select id="findList" resultMap="BaseResultMap">
+    SELECT
+    *
+    FROM
+    ai_featureSelect f
+    WHERE
+    1 = 1
+    <if test="featureselkey != null and featureselkey != '' ">
+     and f.featureSelKey = #{featureselkey}
+    </if>
+    <if test="topic != null and topic != '' ">
+      and f.topic = #{topic}
+    </if>
+    ORDER BY
+    f.createTime DESC
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ai_featureSelect
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zhansheng.framework.domain.aiManager.TbAIfeatureSelect">
+    <selectKey keyProperty="id" keyColumn="id" resultType="INTEGER" order="AFTER">
+      select last_insert_id();
+    </selectKey>
+    insert into ai_featureSelect (featureSelKey, fanNums,
+      topic, featureKey, dataPath, 
+      createTime, shares, startTime,
+      endTime, selColumns)
+    values ( #{featureselkey,jdbcType=VARCHAR}, #{fannums,jdbcType=VARCHAR},
+      #{topic,jdbcType=VARCHAR}, #{featurekey,jdbcType=VARCHAR}, #{datapath,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{shares,jdbcType=INTEGER}, #{starttime,jdbcType=TIMESTAMP},
+      #{endtime,jdbcType=TIMESTAMP}, #{selcolumns,jdbcType=VARCHAR})
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhansheng.framework.domain.aiManager.TbAIfeatureSelect">
+    update ai_featureSelect
+    <set>
+      <if test="featureselkey != null">
+        featureSelKey = #{featureselkey,jdbcType=VARCHAR},
+      </if>
+      <if test="fannums != null">
+        fanNums = #{fannums,jdbcType=VARCHAR},
+      </if>
+      <if test="topic != null">
+        topic = #{topic,jdbcType=VARCHAR},
+      </if>
+      <if test="featurekey != null">
+        featureKey = #{featurekey,jdbcType=VARCHAR},
+      </if>
+      <if test="datapath != null">
+        dataPath = #{datapath,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="shares != null">
+        shares = #{shares,jdbcType=INTEGER},
+      </if>
+      <if test="starttime != null">
+        startTime = #{starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endtime != null">
+        endTime = #{endtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="selcolumns != null">
+        selColumns = #{selcolumns,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhansheng.framework.domain.aiManager.TbAIfeatureSelect">
+    update ai_featureSelect
+    set featureSelKey = #{featureselkey,jdbcType=VARCHAR},
+      fanNums = #{fannums,jdbcType=VARCHAR},
+      topic = #{topic,jdbcType=VARCHAR},
+      featureKey = #{featurekey,jdbcType=VARCHAR},
+      dataPath = #{datapath,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      shares = #{shares,jdbcType=INTEGER},
+      startTime = #{starttime,jdbcType=TIMESTAMP},
+      endTime = #{endtime,jdbcType=TIMESTAMP},
+      selColumns = #{selcolumns,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

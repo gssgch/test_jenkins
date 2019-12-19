@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.dao.TbFanFaultRepairMapper">
+
+
+  <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbFanFaultRepair">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="fk_fanfault_id" jdbcType="INTEGER" property="fkFanfaultId" />
+    <result column="repair_name" jdbcType="VARCHAR" property="repairName" />
+    <result column="repair_date" jdbcType="TIMESTAMP" property="repairDate" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="fault_exp" jdbcType="VARCHAR" property="faultExp" />
+    <result column="fault_desc" jdbcType="VARCHAR" property="faultDesc" />
+    <result column="repair_answer" jdbcType="VARCHAR" property="repairAnswer" />
+    <result column="descb" jdbcType="VARCHAR" property="descb" />
+  </resultMap>
+
+
+  <insert id="insert" parameterType="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbFanFaultRepair">
+      <selectKey keyProperty="id" keyColumn="id" resultType="int" order="AFTER">
+          select last_insert_id();
+      </selectKey>
+    insert into fanfaultrepair (id, fk_fanfault_id, repair_name, 
+      repair_date, status, fault_exp, 
+      fault_desc, repair_answer, descb
+      )
+    values (#{id,jdbcType=INTEGER}, #{fkFanfaultId,jdbcType=INTEGER}, #{repairName,jdbcType=VARCHAR}, 
+      #{repairDate,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, #{faultExp,jdbcType=VARCHAR}, 
+      #{faultDesc,jdbcType=VARCHAR}, #{repairAnswer,jdbcType=VARCHAR}, #{descb,jdbcType=VARCHAR}
+      )
+  </insert>
+
+
+</mapper>

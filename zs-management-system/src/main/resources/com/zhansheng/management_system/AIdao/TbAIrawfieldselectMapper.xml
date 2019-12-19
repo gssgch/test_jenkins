@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.AIdao.TbAIrawfieldselectMapper">
+  <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.aiManager.TbAIrawfieldselect">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="selectKey" jdbcType="VARCHAR" property="selectkey" />
+    <result column="topic" jdbcType="VARCHAR" property="topic" />
+    <result column="fanNums" jdbcType="VARCHAR" property="fannums" />
+    <result column="startTime" jdbcType="TIMESTAMP" property="starttime" />
+    <result column="endTime" jdbcType="TIMESTAMP" property="endtime" />
+    <result column="selColumns" jdbcType="VARCHAR" property="selcolumns" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="dataPath" jdbcType="VARCHAR" property="datapath" />
+  </resultMap>
+
+  <select id="findList" resultMap="BaseResultMap">
+        SELECT
+          *
+        FROM
+            ai_rawfieldselect r
+        WHERE
+            1 = 1
+            <if test="selectkey != null and selectkey != '' ">
+            and r.selectKey = #{selectkey}
+            </if>
+        ORDER BY
+            r.createTime DESC
+   </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ai_rawfieldselect
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zhansheng.framework.domain.aiManager.TbAIrawfieldselect">
+    <selectKey keyProperty="id" keyColumn="id" resultType="INTEGER" order="AFTER">
+      select last_insert_id();
+    </selectKey>
+    insert into ai_rawfieldselect ( selectKey, topic,
+      fanNums, startTime, endTime, 
+      selColumns, createTime, dataPath
+      )
+    values (#{selectkey,jdbcType=VARCHAR}, #{topic,jdbcType=VARCHAR},
+      #{fannums,jdbcType=VARCHAR}, #{starttime,jdbcType=TIMESTAMP}, #{endtime,jdbcType=TIMESTAMP}, 
+      #{selcolumns,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP}, #{datapath,jdbcType=VARCHAR}
+      )
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhansheng.framework.domain.aiManager.TbAIrawfieldselect">
+    update ai_rawfieldselect
+    <set>
+      <if test="selectkey != null">
+        selectKey = #{selectkey,jdbcType=VARCHAR},
+      </if>
+      <if test="topic != null">
+        topic = #{topic,jdbcType=VARCHAR},
+      </if>
+      <if test="fannums != null">
+        fanNums = #{fannums,jdbcType=VARCHAR},
+      </if>
+      <if test="starttime != null">
+        startTime = #{starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endtime != null">
+        endTime = #{endtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="selcolumns != null">
+        selColumns = #{selcolumns,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="datapath != null">
+        dataPath = #{datapath,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhansheng.framework.domain.aiManager.TbAIrawfieldselect">
+    update ai_rawfieldselect
+    set selectKey = #{selectkey,jdbcType=VARCHAR},
+      topic = #{topic,jdbcType=VARCHAR},
+      fanNums = #{fannums,jdbcType=VARCHAR},
+      startTime = #{starttime,jdbcType=TIMESTAMP},
+      endTime = #{endtime,jdbcType=TIMESTAMP},
+      selColumns = #{selcolumns,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      dataPath = #{datapath,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

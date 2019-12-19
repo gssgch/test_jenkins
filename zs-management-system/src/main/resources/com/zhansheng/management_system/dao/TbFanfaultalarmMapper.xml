@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.dao.TbFanfaultalarmMapper">
+
+
+
+  <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbFanfaultalarm">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="alarm_date" jdbcType="TIMESTAMP" property="alarmDate" />
+    <result column="alarm_level" jdbcType="INTEGER" property="alarmLevel" />
+    <result column="receiver" jdbcType="VARCHAR" property="receiver" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="mail" jdbcType="VARCHAR" property="mail" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="alarmtype" jdbcType="INTEGER" property="alarmtype" />
+    <result column="fk_fanfault_id" jdbcType="INTEGER" property="fkFanfaultId" />
+  </resultMap>
+
+  <resultMap id="TbAlarmreceiverResultMap" type="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbAlarmreceiver">
+    <id column="id" jdbcType="INTEGER" property="id"/>
+    <result column="name" jdbcType="VARCHAR" property="name"/>
+    <result column="phone" jdbcType="VARCHAR" property="phone"/>
+    <result column="mail" jdbcType="VARCHAR" property="mail"/>
+    <result column="descb" jdbcType="VARCHAR" property="descb"/>
+  </resultMap>
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from fanfaultalarm
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+
+  <insert id="insert" parameterType="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbFanfaultalarm">
+
+    <selectKey keyProperty="id" keyColumn="id" resultType="int" order="AFTER">
+      select last_insert_id();
+    </selectKey>
+
+    insert into fanfaultalarm ( alarm_date, alarm_level,
+      receiver, phone, mail, 
+      status, alarmtype, fk_fanfault_id
+      )
+    values ( #{alarmDate,jdbcType=TIMESTAMP}, #{alarmLevel,jdbcType=INTEGER},
+      #{receiver,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{mail,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER}, #{alarmtype,jdbcType=INTEGER}, #{fkFanfaultId,jdbcType=INTEGER}
+      )
+  </insert>
+
+
+  <update id="updateByPrimaryKey" parameterType="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbFanfaultalarm">
+    update fanfaultalarm
+    set alarm_date = #{alarmDate,jdbcType=TIMESTAMP},
+      alarm_level = #{alarmLevel,jdbcType=INTEGER},
+      receiver = #{receiver,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      mail = #{mail,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      alarmtype = #{alarmtype,jdbcType=INTEGER},
+      fk_fanfault_id = #{fkFanfaultId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="findList" resultMap="TbAlarmreceiverResultMap">
+    select * from alarmreceiver
+  </select>
+
+
+</mapper>

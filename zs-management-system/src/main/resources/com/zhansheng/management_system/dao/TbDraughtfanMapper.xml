@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zhansheng.management_system.dao.TbDraughtfanMapper">
+
+    <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.UserManager.TbDraughtfan">
+        <result column="F_draught_id" jdbcType="INTEGER" property="fDraughtId"/>
+        <result column="F_Draught_number" jdbcType="INTEGER" property="fDraughtNumber"/>
+        <result column="F_Createtime" jdbcType="VARCHAR" property="fCreatetime"/>
+        <result column="F_Updateuser" jdbcType="VARCHAR" property="fUpdateuser"/>
+        <result column="F_Updatetime" jdbcType="VARCHAR" property="fUpdatetime"/>
+    </resultMap>
+
+
+    <select id="findByLoopIdList" resultMap="BaseResultMap">
+        SELECT * FROM tb_draughtfan d WHERE d.F_draught_id in
+        (select dl.F_draught_id from tb_draughtfan_loop dl where dl.F_loop_id = #{loopId})
+    </select>
+
+    <select id="findDraughtfanNO" resultMap="BaseResultMap">
+        SELECT * FROM tb_draughtfan d
+    </select>
+
+    <insert id="addDraughtfan" parameterType="com.zhansheng.framework.domain.UserManager.TbDraughtfan">
+        <!-- 配置插入操作后，获取插入数据的id -->
+        <selectKey keyProperty="fDraughtId" keyColumn="F_draught_id" resultType="int" order="AFTER">
+            select last_insert_id();
+        </selectKey>
+        insert into tb_draughtfan
+        (F_Draught_number,F_Updateuser,F_Createtime,F_Updatetime)
+        values
+        (#{fDraughtNumber},#{fUpdateuser},#{fCreatetime},#{fUpdatetime})
+    </insert>
+
+    <delete id="deleteDraughtfan">
+        delete from tb_draughtfan
+    </delete>
+
+    <delete id="deleteById" parameterType="java.lang.Integer">
+        delete from tb_draughtfan where F_draught_id = #{draughtfanId}
+    </delete>
+
+    <select id="findByloopIdAndDraughtfanList" resultMap="BaseResultMap">
+        SELECT * FROM tb_draughtfan d WHERE d.F_draught_id IN
+        (SELECT dl.F_draught_id FROM tb_draughtfan_loop dl WHERE F_loop_id = #{loopId})
+    </select>
+
+    <update id="updateDraughtfan" parameterType="com.zhansheng.framework.domain.UserManager.TbDraughtfan">
+         update tb_draughtfan set
+        F_Draught_number = #{fDraughtNumber}
+        where F_draught_id = #{fDraughtId}
+    </update>
+
+    <select id="findBydraughtNumber" resultMap="BaseResultMap">
+        SELECT df.F_Draught_number FROM tb_draughtfan df WHERE df.F_Draught_number = #{number}
+    </select>
+
+
+</mapper>

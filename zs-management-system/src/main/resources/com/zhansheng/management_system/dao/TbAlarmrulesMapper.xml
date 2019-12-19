@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.dao.TbAlarmrulesMapper">
+
+
+  <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbAlarmrules">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="level" jdbcType="INTEGER" property="level" />
+    <result column="alarm_condition_exp" jdbcType="VARCHAR" property="alarmConditionExp" />
+    <result column="fk_fault_type" jdbcType="INTEGER" property="fkFaultType" />
+    <result column="fk_fault_loc" jdbcType="INTEGER" property="fkFaultLoc" />
+    <result column="fk_alarmreceiver" jdbcType="INTEGER" property="fkAlarmreceiver" />
+    <result column="descb" jdbcType="VARCHAR" property="descb" />
+    <result column="alarmtype" jdbcType="INTEGER" property="alarmtype" />
+  </resultMap>
+
+
+  <select id="findList" resultMap="BaseResultMap">
+    select * from alarmrules
+  </select>
+
+  <select id="findByfkAlarmreceiver" resultMap="BaseResultMap">
+    select * from alarmrules where fk_alarmreceiver = #{id}
+  </select>
+
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from alarmrules
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+
+  <insert id="insert" parameterType="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbAlarmrules">
+
+    <selectKey keyProperty="id" keyColumn="id" resultType="int" order="AFTER">
+      select last_insert_id();
+    </selectKey>
+
+    insert into alarmrules ( level, alarm_condition_exp,
+      fk_fault_type, fk_fault_loc, fk_alarmreceiver, 
+      descb,alarmtype)
+    values ( #{level,jdbcType=INTEGER}, #{alarmConditionExp,jdbcType=VARCHAR},
+      #{fkFaultType,jdbcType=INTEGER}, #{fkFaultLoc,jdbcType=INTEGER},
+      #{fkAlarmreceiver,jdbcType=INTEGER},
+      #{descb,jdbcType=VARCHAR},
+      #{alarmtype,jdbcType=VARCHAR}
+    )
+  </insert>
+
+
+
+  <update id="updateByPrimaryKey" parameterType="com.zhansheng.framework.domain.UserManager.Industrialcontrol.TbAlarmrules">
+    update alarmrules
+    set level = #{level,jdbcType=INTEGER},
+      alarm_condition_exp = #{alarmConditionExp,jdbcType=VARCHAR},
+      fk_fault_type = #{fkFaultType,jdbcType=INTEGER},
+      fk_fault_loc = #{fkFaultLoc,jdbcType=INTEGER},
+      fk_alarmreceiver = #{fkAlarmreceiver,jdbcType=INTEGER},
+      descb = #{descb,jdbcType=VARCHAR},
+      alarmtype = #{alarmtype,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+
+</mapper>

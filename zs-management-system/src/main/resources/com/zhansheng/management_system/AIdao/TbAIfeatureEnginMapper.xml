@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.management_system.AIdao.TbAIfeatureEnginMapper">
+  <resultMap id="BaseResultMap" type="com.zhansheng.framework.domain.aiManager.TbAIfeatureEngin">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="featureKey" jdbcType="VARCHAR" property="featurekey" />
+    <result column="topic" jdbcType="VARCHAR" property="topic" />
+    <result column="featureColumns" jdbcType="VARCHAR" property="featureColumns" />
+    <result column="expNum" jdbcType="INTEGER" property="expnum" />
+    <result column="dataShape" jdbcType="VARCHAR" property="datashape" />
+    <result column="selectKey" jdbcType="VARCHAR" property="selectkey" />
+    <result column="shellPath" jdbcType="VARCHAR" property="shellpath" />
+    <result column="dataPath" jdbcType="VARCHAR" property="datapath" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+  </resultMap>
+
+  <select id="findList" resultMap="BaseResultMap">
+    SELECT
+    *
+    FROM
+    ai_featureEngin f
+    WHERE
+    1 = 1
+    <if test="featurekey != null and featurekey != '' ">
+      and f.featureKey = #{featurekey}
+    </if>
+    <if test="topic != null and topic != '' ">
+      and f.topic = #{topic}
+    </if>
+    ORDER BY
+    f.createTime DESC
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from ai_featureEngin
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.zhansheng.framework.domain.aiManager.TbAIfeatureEngin">
+    <selectKey keyProperty="id" keyColumn="id" resultType="INTEGER" order="AFTER">
+      select last_insert_id();
+    </selectKey>
+    insert into ai_featureEngin (featureKey, topic, featureColumns, expNum,
+      dataShape, selectKey, shellPath, 
+      dataPath, createTime)
+    values (#{featurekey,jdbcType=VARCHAR}, #{topic,jdbcType=VARCHAR}, #{featureColumns,jdbcType=VARCHAR}, #{expnum,jdbcType=INTEGER},
+      #{datashape,jdbcType=VARCHAR}, #{selectkey,jdbcType=VARCHAR}, #{shellpath,jdbcType=VARCHAR}, 
+      #{datapath,jdbcType=VARCHAR}, #{createtime,jdbcType=TIMESTAMP})
+  </insert>
+
+  <update id="updateByPrimaryKeySelective" parameterType="com.zhansheng.framework.domain.aiManager.TbAIfeatureEngin">
+    update ai_featureEngin
+    <set>
+      <if test="featurekey != null">
+        featureKey = #{featurekey,jdbcType=VARCHAR},
+      </if>
+      <if test="topic != null">
+        topic = #{topic,jdbcType=VARCHAR},
+      </if>
+      <if test="featureColumns != null">
+        featureColumns = #{featureColumns,jdbcType=VARCHAR},
+      </if>
+      <if test="expnum != null">
+        expNum = #{expnum,jdbcType=INTEGER},
+      </if>
+      <if test="datashape != null">
+        dataShape = #{datashape,jdbcType=VARCHAR},
+      </if>
+      <if test="selectkey != null">
+        selectKey = #{selectkey,jdbcType=VARCHAR},
+      </if>
+      <if test="shellpath != null">
+        shellPath = #{shellpath,jdbcType=VARCHAR},
+      </if>
+      <if test="datapath != null">
+        dataPath = #{datapath,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.zhansheng.framework.domain.aiManager.TbAIfeatureEngin">
+    update ai_featureEngin
+    set featureKey = #{featurekey,jdbcType=VARCHAR},
+      topic = #{topic,jdbcType=VARCHAR},
+      featureColumns = #{featureColumns,jdbcType=VARCHAR},
+      expNum = #{expnum,jdbcType=INTEGER},
+      dataShape = #{datashape,jdbcType=VARCHAR},
+      selectKey = #{selectkey,jdbcType=VARCHAR},
+      shellPath = #{shellpath,jdbcType=VARCHAR},
+      dataPath = #{datapath,jdbcType=VARCHAR},
+      createTime = #{createtime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

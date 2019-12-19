@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhansheng.faultdetection.dao.BaseMapper">
+
+    <!--环路信息-->
+    <resultMap id="LoopBaseResultMap" type="com.zhansheng.framework.domain.UserManager.TbLoop">
+        <result column="F_loop_id" jdbcType="INTEGER" property="fLoopId"/>
+        <result column="F_loop_name" jdbcType="VARCHAR" property="fLoopName"/>
+    </resultMap>
+
+    <!--风机信息 -->
+    <resultMap id="DraughtfanResultMap" type="com.zhansheng.framework.domain.UserManager.TbDraughtfan">
+        <result column="F_draught_id" jdbcType="INTEGER" property="fDraughtId"/>
+        <result column="F_Draught_number" jdbcType="INTEGER" property="fDraughtNumber"/>
+        <result column="F_Createtime" jdbcType="VARCHAR" property="fCreatetime"/>
+        <result column="F_Updateuser" jdbcType="VARCHAR" property="fUpdateuser"/>
+        <result column="F_Updatetime" jdbcType="VARCHAR" property="fUpdatetime"/>
+
+    </resultMap>
+
+
+    <select id="countDra" resultType="java.lang.Integer">
+        select  COUNT(*) from tb_draughtfan
+    </select>
+
+
+
+    <!--通过风厂id 查询风厂下的所有环路-->
+    <select id="findPageList" resultMap="LoopBaseResultMap">
+        SELECT lw.F_Windmill_id,lw.F_loop_id,l.F_loop_name FROM tb_loop_windmill lw
+        INNER JOIN tb_loop l ON lw.F_loop_id = l.F_loop_id
+        AND lw.F_Windmill_id = #{windmillId}
+        ORDER BY
+        lw.F_Windmill_id, l.F_loop_id
+    </select>
+
+    <!--通过风厂id 和 环路id 查询-->
+    <select id="findByLoopIdAndList" resultMap="LoopBaseResultMap">
+        SELECT lw.F_Windmill_id,lw.F_loop_id,l.F_loop_name FROM tb_loop_windmill lw
+        INNER JOIN tb_loop l ON lw.F_loop_id = l.F_loop_id
+        AND lw.F_Windmill_id = #{windmillId} and lw.F_loop_id = #{loopId}
+        ORDER BY
+        lw.F_Windmill_id, l.F_loop_id
+    </select>
+
+    <!--查询环路下的风机数量-->
+    <select id="countLoop" resultType="java.lang.Integer">
+        select  COUNT(*) from tb_draughtfan d where d.F_draught_id in (select dl.F_draught_id from tb_draughtfan_loop
+        dl where dl.F_loop_id = #{loopId}
+        )
+    </select>
+
+    <select id="findByLoopIdList" resultMap="DraughtfanResultMap">
+        SELECT * FROM tb_draughtfan d WHERE d.F_draught_id in
+        (select dl.F_draught_id from tb_draughtfan_loop dl where dl.F_loop_id = #{loopId})
+    </select>
+
+    <!--查询当前环路下的所有风机-->
+    <!--<select id="findByFdraughtid" resultMap="DraughtfanResultMap">
+        SELECT d.F_Draught_number FROM tb_draughtfan d WHERE d.F_draught_id IN (SELECT dl.F_draught_id FROM tb_draughtfan_loop dl WHERE dl.F_loop_id IN
+( SELECT lw.F_loop_id FROM tb_loop_windmill lw WHERE lw.F_Windmill_id = #{windmillId}))
+    </select>-->
+
+</mapper>
